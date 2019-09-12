@@ -1,20 +1,37 @@
 <template>
   <div id="app">
-    <HelloWorld count="Welcome to Your Vue.js App"/>
+    <UserTable />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UserTable from './components/UserTable.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    UserTable
+  },
+  created() {
+
   }
 }
 </script>
 
 <style>
+  html, body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 
+  #app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 </style>
