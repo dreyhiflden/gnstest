@@ -11,7 +11,9 @@ export default new Vuex.Store({
     searchQuery: "",
   },
   getters: {
-    users: state => state.users.filter(user => user.name.toLowerCase().match(state.searchQuery.toLowerCase())),
+    users: state => state.users.filter(user => user.name.toLowerCase().match(state.searchQuery.toLowerCase())
+      || user.location.toLowerCase().match(state.searchQuery.toLowerCase())
+      || user.currency.toString().match(state.searchQuery)),
     loading: state => state.loading,
   },
   mutations: {

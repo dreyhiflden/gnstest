@@ -1,8 +1,6 @@
 <template>
   <div>
-
     <SearchData />
-
     <table class="user-table">
       <thead>
         <tr>
@@ -17,6 +15,7 @@
           <td>{{ user.location }}</td>
           <td>{{ user.currency }}</td>
         </tr>
+        <tr v-if="isEmpty">Nothing to show...</tr>
       </tbody>
     </table>
   </div>
@@ -26,12 +25,24 @@
   import SearchData from "./SearchData";
 
   export default {
-    components: {SearchData},
+    components: {
+      SearchData
+    },
+    computed: {
+      isEmpty: function () {
+        return this.$store.getters.users.length === 0;
+      }
+    }
   }
 </script>
 
 <style scoped>
- .user-table {
-   border: 1px solid #4c4c4c;
- }
+  .user-table {
+    border: 1px solid #4c4c4c;
+    width: 600px;
+  }
+
+  thead th {
+    text-align: left;
+  }
 </style>
