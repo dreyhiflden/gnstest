@@ -12,9 +12,6 @@ export default {
   components: {
     UserTable
   },
-  created() {
-
-  }
 }
 </script>
 

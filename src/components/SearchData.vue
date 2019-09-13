@@ -1,23 +1,18 @@
 <template>
   <div>
     <label>Search: </label>
-    <input type="text" v-model="query" name="search" class="search-form">
+    <input type="text" v-model="getSearchQuery" @input="setSearchQuery($event.target.value)" name="search"
+           class="search-form">
   </div>
 </template>
 
 <script>
+  import { mapGetters, mapMutations } from 'vuex';
+
   export default {
     name: "SearchData",
-    computed: {
-      query: {
-        get () {
-          return this.$store.state.searchQuery
-        },
-        set (value) {
-          this.$store.commit('setSearchQuery', value)
-        }
-      }
-    }
+    computed: mapGetters(['getSearchQuery']),
+    methods: mapMutations(['setSearchQuery']),
   }
 </script>
 
