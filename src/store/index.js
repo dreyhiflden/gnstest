@@ -18,7 +18,7 @@ export default new Vuex.Store({
       || user.currency.toString().match(state.searchQuery)),
     loading: state => state.loading,
     sortedUsers: function(state, getters) {
-      return getters.users.sort((a,b) => {
+      return getters.users.sort((a, b) => {
         let modifier = 1;
         if(state.currentSortDir === 'desc') modifier = -1;
         if(a[state.currentSort] < b[state.currentSort]) return -1 * modifier;
