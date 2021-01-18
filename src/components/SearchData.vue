@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label>Search: </label>
+    <label>Search2: </label>
     <input type="text" v-model="getSearchQuery" @input="setSearchQuery($event.target.value)" name="search"
            class="search-form">
   </div>
